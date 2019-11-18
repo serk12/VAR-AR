@@ -23,12 +23,7 @@ namespace GoogleARCore.Examples.ObjectManipulation
     using GoogleARCore.Examples.ObjectManipulationInternal;
     using UnityEngine;
 
-    /// <summary>
-    /// Manipulates the position of an object via a drag gesture.
-    /// If not selected, the object will be selected when the drag gesture starts.
-    /// </summary>
-    [RequireComponent(typeof(SelectionManipulator))]
-    public class TranslationManipulator : Manipulator
+    public class SelectionPinta : Manipulator
     {
 
         /// <summary>
