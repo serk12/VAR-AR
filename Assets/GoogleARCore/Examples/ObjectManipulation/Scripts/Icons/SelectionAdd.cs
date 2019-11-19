@@ -4,7 +4,7 @@ namespace GoogleARCore.Examples.ObjectManipulation
     using GoogleARCore.Examples.ObjectManipulationInternal;
     using UnityEngine;
 
-    public class SelectionRemove : Manipulator
+    public class SelectionAdd : Manipulator
     {
         private GameObject SelectedObject;
 
@@ -39,7 +39,6 @@ namespace GoogleARCore.Examples.ObjectManipulation
         /// <param name="gesture">The current gesture.</param>
         protected override void OnStartManipulation(TapGesture gesture)
         {
-             Destroy(SelectedObject);
         }
 
         public void setTarget(GameObject target)
