@@ -44,6 +44,8 @@ namespace GoogleARCore.Examples.ObjectManipulation
         /// </summary>
         public GameObject ManipulatorPrefab;
         public GameObject pencilPrefab;
+        public GameObject addPrefab;
+        public GameObject morePrefab;
 
         /// <summary>
         /// Returns true if the manipulation can be started for the given gesture.
@@ -101,9 +103,15 @@ namespace GoogleARCore.Examples.ObjectManipulation
                     var manipulator =
                         Instantiate(ManipulatorPrefab, hit.Pose.position, hit.Pose.rotation);
                     // Instantiate UI.
-                    Vector3 offSet = new Vector3(0.2f, 0.0f, -0.1f);
+                    Vector3 offSet = new Vector3(0.25f, 0.0f, 0.1f);
                     var pencil =
                         Instantiate(pencilPrefab, hit.Pose.position + offSet, hit.Pose.rotation * Quaternion.Euler(90, 0, 0));
+                    offSet.z -= 0.1f;
+                    var add =
+                        Instantiate(addPrefab, hit.Pose.position + offSet, hit.Pose.rotation * Quaternion.Euler(90, 0, 0));
+                    offSet.z -= 0.1f;
+                    var more =
+                        Instantiate(morePrefab, hit.Pose.position + offSet, hit.Pose.rotation * Quaternion.Euler(90, 0, 0));
                     // Make game object a child of the manipulator.
                     gameObject.transform.parent = manipulator.transform;
 
@@ -116,6 +124,8 @@ namespace GoogleARCore.Examples.ObjectManipulation
 
                     // Make manipulator a child of the anchor.
                     pencil.transform.parent = gameObject.transform;
+                    add.transform.parent = gameObject.transform;
+                    more.transform.parent = gameObject.transform;
                     // Select the placed object.
                     manipulator.GetComponent<Manipulator>().Select();
                 }
