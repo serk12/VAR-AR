@@ -28,6 +28,8 @@ namespace GoogleARCore.Examples.ObjectManipulation
     /// </summary>
     public class TapGesture : Gesture<TapGesture>
     {
+
+        public GameObject TapObject { get; protected set; }
         private float m_ElapsedTime = 0.0f;
 
         /// <summary>
@@ -78,6 +80,7 @@ namespace GoogleARCore.Examples.ObjectManipulation
                 if (gameObject != null)
                 {
                     TargetObject = gameObject.GetComponentInParent<Manipulator>().gameObject;
+                    TapObject = gameObject;
                 }
             }
         }

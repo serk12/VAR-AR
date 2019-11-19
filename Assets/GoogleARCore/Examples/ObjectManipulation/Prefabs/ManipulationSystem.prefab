@@ -49,3 +49,5 @@ MonoBehaviour:
     type: 3}
   AddPrafab: {fileID: 2426886390815278224, guid: 512a800dcae2ed1d6b4366d18523d328,
     type: 3}
+  RemovePrafab: {fileID: 1627210648552942642, guid: de379698867175757b04794da742e8b2,
+    type: 3}

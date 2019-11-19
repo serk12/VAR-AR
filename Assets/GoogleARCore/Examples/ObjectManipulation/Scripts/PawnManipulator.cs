@@ -70,8 +70,8 @@ namespace GoogleARCore.Examples.ObjectManipulation
                 return;
             }
 
-            // If gesture is targeting an existing object we are done.
-            if (gesture.TargetObject != null)
+            // If gesture is targeting an existing object or someting we are done.
+            if (gesture.TargetObject != null || gesture.TapObject != null)
             {
                 return;
             }

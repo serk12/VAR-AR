@@ -532,12 +532,6 @@ MonoBehaviour:
     type: 3}
   ManipulatorPrefab: {fileID: 1122865395318488, guid: 24556cd4924884d9aaa3d80135c8021d,
     type: 3}
-  pencilPrefab: {fileID: 2972206306895083876, guid: 29c4ecedfdad38033bdb633315b988f9,
-    type: 3}
-  addPrefab: {fileID: 2426886390815278224, guid: 512a800dcae2ed1d6b4366d18523d328,
-    type: 3}
-  morePrefab: {fileID: 7717324185782461660, guid: 59606c89d928036bdaad33befe251144,
-    type: 3}
 --- !u!4 &1812720043
 Transform:
   m_ObjectHideFlags: 0

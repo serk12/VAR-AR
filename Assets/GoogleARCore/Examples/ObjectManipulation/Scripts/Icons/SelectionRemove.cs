@@ -23,8 +23,9 @@ namespace GoogleARCore.Examples.ObjectManipulation
     using GoogleARCore.Examples.ObjectManipulationInternal;
     using UnityEngine;
 
-    public class SelectionPinta : Manipulator
+    public class SelectionRemove : Manipulator
     {
+        private GameObject SelectedObject;
 
         /// <summary>
         /// The Unity's Start method.
@@ -45,29 +46,25 @@ namespace GoogleARCore.Examples.ObjectManipulation
         /// </summary>
         /// <param name="gesture">The current gesture.</param>
         /// <returns>True if the manipulation can be started.</returns>
-        protected override bool CanStartManipulationForGesture(DragGesture gesture)
+        protected override bool CanStartManipulationForGesture(TapGesture gesture)
         {
-            if (gesture.TargetObject == null)
-            {
-                return false;
-            }
-
-            // If the gesture isn't targeting this item, don't start manipulating.
-            if (gesture.TargetObject != gameObject)
-            {
-                return false;
-            }
-
-            return true;
+            if(gesture.TapObject == gameObject) return true;
+            else return false;
         }
 
         /// <summary>
         /// Function called when the manipulation is started.
         /// </summary>
         /// <param name="gesture">The current gesture.</param>
-        protected override void OnStartManipulation(DragGesture gesture)
+        protected override void OnStartManipulation(TapGesture gesture)
         {
-            Debug.LogError("No instance of ManipulationSystem exists in the scene.");
+             Destroy(SelectedObject);
+             Destroy(gameObject);
+        }
+
+        public void setTarget(GameObject target)
+        {
+            SelectedObject = target;
         }
 
 
