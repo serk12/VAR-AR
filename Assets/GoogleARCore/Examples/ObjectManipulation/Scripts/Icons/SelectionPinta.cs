@@ -58,9 +58,6 @@ namespace GoogleARCore.Examples.ObjectManipulation
                 return false;
             }
 
-            // Select it.
-            Select();
-
             return true;
         }
 

@@ -32,6 +32,11 @@ namespace GoogleARCore.Examples.ObjectManipulation
     /// </summary>
     public class ManipulationSystem : MonoBehaviour
     {
+        public GameObject PintaPrafab;
+        public GameObject MorePrafab;
+        public GameObject AddPrafab;
+        private GameObject pencil, add, more;
+
         private static ManipulationSystem s_Instance = null;
 
         private DragGestureRecognizer m_DragGestureRecognizer = new DragGestureRecognizer();
@@ -164,6 +169,10 @@ namespace GoogleARCore.Examples.ObjectManipulation
         internal void Deselect()
         {
             SelectedObject = null;
+            Destroy(pencil);
+            Destroy(more);
+            Destroy(add);
+
         }
 
         /// <summary>
@@ -179,6 +188,21 @@ namespace GoogleARCore.Examples.ObjectManipulation
 
             Deselect();
             SelectedObject = target;
+            // Instantiate UI.
+            Vector3 offSet = new Vector3(0.25f, 0.0f, 0.1f);
+            pencil =
+                Instantiate(PintaPrafab, target.transform.position + offSet, target.transform.rotation * Quaternion.Euler(90, 0, 0));
+            offSet.z -= 0.1f;
+            add =
+                Instantiate(MorePrafab, target.transform.position + offSet, target.transform.rotation * Quaternion.Euler(90, 0, 0));
+            offSet.z -= 0.1f;
+            more =
+                Instantiate(AddPrafab, target.transform.position + offSet, target.transform.rotation * Quaternion.Euler(90, 0, 0));
+
+
+            pencil.transform.parent = target.transform;
+            add.transform.parent = target.transform;
+            more.transform.parent = target.transform;
         }
     }
 }

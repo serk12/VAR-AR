@@ -177,6 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectionVisualization: {fileID: 1674464896453232}
+  pencil: {fileID: 2972206306895083876, guid: 29c4ecedfdad38033bdb633315b988f9, type: 3}
+  more: {fileID: 7717324185782461660, guid: 59606c89d928036bdaad33befe251144, type: 3}
+  add: {fileID: 2426886390815278224, guid: 512a800dcae2ed1d6b4366d18523d328, type: 3}
 --- !u!114 &114220473544446968
 MonoBehaviour:
   m_ObjectHideFlags: 0
