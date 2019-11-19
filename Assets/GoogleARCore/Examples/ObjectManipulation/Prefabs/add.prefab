@@ -107,5 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08cfbcabd7ac61acb5390cd6e81afb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model1: {fileID: 0}
-  model2: {fileID: 0}
+  ManipulatorPrefab: {fileID: 1122865395318488, guid: 24556cd4924884d9aaa3d80135c8021d,
+    type: 3}
+  PawnPrefab: {fileID: 2384174253509914602, guid: 3787460092104933cae979c2b604dc2c,
+    type: 3}

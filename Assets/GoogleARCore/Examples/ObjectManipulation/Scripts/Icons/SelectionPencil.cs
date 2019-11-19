@@ -7,7 +7,7 @@ namespace GoogleARCore.Examples.ObjectManipulation
     public class SelectionPencil : Manipulator
     {
         private GameObject SelectedObject;
-
+        public Material m_material;
         /// <summary>
         /// The Unity's Start method.
         /// </summary>
@@ -39,7 +39,7 @@ namespace GoogleARCore.Examples.ObjectManipulation
         /// <param name="gesture">The current gesture.</param>
         protected override void OnStartManipulation(TapGesture gesture)
         {
-            SelectedObject.GetComponent<Renderer> ().material.color = Color.green;
+            SelectedObject.GetComponent<Renderer>().material = m_material;
         }
 
         public void setTarget(GameObject target)
