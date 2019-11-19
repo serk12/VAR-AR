@@ -39,7 +39,9 @@ namespace GoogleARCore.Examples.ObjectManipulation
         /// <param name="gesture">The current gesture.</param>
         protected override void OnStartManipulation(TapGesture gesture)
         {
-            SelectedObject.GetComponent<Renderer>().material = m_material;
+            SelectedObject.GetComponent<Renderer>().material.color = new Color(1,1,1);
+            var red_m = Resources.Load("Assets/GoogleARCore/Examples/ObjectManipulation/Prefabs/red.mat", typeof(Material)) as Material;
+            SelectedObject.GetComponent<Renderer>().material = red_m;
         }
 
         public void setTarget(GameObject target)
