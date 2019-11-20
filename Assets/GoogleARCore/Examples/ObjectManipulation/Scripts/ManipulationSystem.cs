@@ -192,24 +192,23 @@ namespace GoogleARCore.Examples.ObjectManipulation
             SelectedObject = target;
             // Instantiate UI.
             Vector3 offSet = new Vector3(0.25f, 0.0f, 0.2f);
-            pencil = Instantiate(PintaPrafab, target.transform.position + offSet, target.transform.rotation * Quaternion.Euler(90, 0, 0));
-            pencil.GetComponent<SelectionPencil>().setTarget(target);
+            // pencil = Instantiate(PintaPrafab, target.transform.position + offSet, target.transform.rotation * Quaternion.Euler(90, 0, 0));
+            // pencil.GetComponent<SelectionPencil>().setTarget(target);
+            // pencil.transform.parent = target.transform;
 
-            offSet.z -= 0.1f;
+            offSet.z -= 0.1f;   
             add = Instantiate(AddPrafab, target.transform.position + offSet, target.transform.rotation * Quaternion.Euler(90, 0, 0));
             add.GetComponent<SelectionAdd>().setTarget(target);
+            add.transform.parent = target.transform;
 
             offSet.z -= 0.1f;
             more = Instantiate(MorePrafab, target.transform.position + offSet, target.transform.rotation * Quaternion.Euler(90, 0, 0));
             more.GetComponent<SelectionMore>().setTarget(target);
+            more.transform.parent = target.transform;
 
             offSet.z -= 0.1f;
             remove = Instantiate(RemovePrafab, target.transform.position + offSet, target.transform.rotation * Quaternion.Euler(90, 0, 0));
             remove.GetComponent<SelectionRemove>().setTarget(target);
-
-            pencil.transform.parent = target.transform;
-            add.transform.parent = target.transform;
-            more.transform.parent = target.transform;
             remove.transform.parent = target.transform;
         }
     }

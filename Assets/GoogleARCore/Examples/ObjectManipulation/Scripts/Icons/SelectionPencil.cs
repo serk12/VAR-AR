@@ -42,6 +42,21 @@ namespace GoogleARCore.Examples.ObjectManipulation
             SelectedObject.GetComponent<Renderer>().material.color = new Color(1,1,1);
             var red_m = Resources.Load("Assets/GoogleARCore/Examples/ObjectManipulation/Prefabs/red.mat", typeof(Material)) as Material;
             SelectedObject.GetComponent<Renderer>().material = red_m;
+
+            Renderer[] children;
+            children = SelectedObject.GetComponentsInChildren<Renderer>();
+            foreach (Renderer rend in children)
+            {
+                var mats = new Material[rend.materials.Length];
+                for (var j = 0; j < rend.materials.Length; j++)
+                {
+                    mats[j] = red_m;
+                }
+                rend.materials = mats;
+            }
+
+
+             Debug.Log(SelectedObject.GetComponent<Renderer>().material);
         }
 
         public void setTarget(GameObject target)
